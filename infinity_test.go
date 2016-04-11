@@ -39,7 +39,7 @@ func TestRoundTrip(t *testing.T) {
 	}
 }
 
-// "Creation of Adam" By Michelangelo - See below., Public Domain, https://commons.wikimedia.org/w/index.php?curid=15461165
+// the image "Creation of Adam" By Michelangelo is Public Domain, see: https://commons.wikimedia.org/w/index.php?curid=15461165
 func TestCreation(t *testing.T) {
 	f := "samples/creation_of_adam.jpg"
 	b, err := ioutil.ReadFile(f)
