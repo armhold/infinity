@@ -17,7 +17,7 @@ func TestAdd(t *testing.T) {
 
 func TestReadFile(t *testing.T) {
 	// NB: no newline in the file; use "od -t u1 samples/abc.txt" to examine it
-	actual := ReadFile("samples/abc.txt").String()
+	actual := ReadFile("samples/ABC.txt").String()
 	expected := "4276803"
 
 	// a == 65 == 01000001
@@ -41,5 +41,34 @@ func TestSetBytes(t *testing.T) {
 	expected := "65534"
 	if actual != expected {
 		t.Fatalf("expected: %s, got: %s", expected, actual)
+	}
+}
+
+func TestRoundTrip(t *testing.T) {
+	// test bytes -> int
+	//
+	abc := "ABC"
+	b := []byte(abc)
+
+	i := big.Int{}
+	i.SetBytes(b)
+
+	expectedInt := int64(4276803)
+	actualInt := i.Int64()
+
+	if actualInt != expectedInt {
+		t.Fatalf("expected: %d, got: %d", expectedInt, actualInt)
+	}
+
+	// test int -> bytes
+	//
+	i = big.Int{}
+	i.SetInt64(4276803)
+
+	expectedString := "ABC"
+	actualString := string(i.Bytes())
+
+	if actualString != expectedString {
+		t.Fatalf("expected: %s, got: %s", expectedString, actualString)
 	}
 }
