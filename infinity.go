@@ -6,6 +6,7 @@ import (
 	"strconv"
 	"math/big"
 	"log"
+	"io/ioutil"
 )
 
 func Binary2decimal(binary string) (int64, error) {
@@ -38,4 +39,15 @@ func addBig(n int64) *big.Int{
 	i.Add(i, nInt)
 
 	return i
+}
+
+
+func ReadFile(file string) *big.Int {
+	b, err := ioutil.ReadFile(file)
+	if err != nil {
+		log.Fatalf("error reading file %s: %s", file, err)
+	}
+	i := &big.Int{}
+
+	return i.SetBytes(b)
 }
