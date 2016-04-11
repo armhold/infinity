@@ -4,6 +4,8 @@ import (
 	"os"
 	"fmt"
 	"strconv"
+	"math/big"
+	"log"
 )
 
 func Binary2decimal(binary string) (int64, error) {
@@ -22,4 +24,18 @@ func Decimal2binary(decimal string) (string, error) {
 	}
 
 	return fmt.Sprintf("%0b", d), nil
+}
+
+func addBig(n int64) *big.Int{
+	i := &big.Int{}
+	_, success := i.SetString("1234567890123456789012345678901234567890", 10)
+	if !success {
+		log.Fatal("failed to SetString")
+	}
+
+	nInt := &big.Int{}
+	nInt.SetInt64(n)
+	i.Add(i, nInt)
+
+	return i
 }
