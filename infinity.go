@@ -1,12 +1,11 @@
 package infinity
 
 import (
-	"os"
 	"fmt"
-	"strconv"
-	"math/big"
 	"log"
-	"io/ioutil"
+	"math/big"
+	"os"
+	"strconv"
 )
 
 func Binary2decimal(binary string) (int64, error) {
@@ -38,35 +37,9 @@ func BytesToIntString(b []byte) string {
 func IntStringToBytes(s string) []byte {
 	i := &big.Int{}
 	_, ok := i.SetString(s, 10)
-	if ! ok {
+	if !ok {
 		log.Fatalf("error creating big.Int from string: %s", s)
 	}
 
 	return i.Bytes()
-}
-
-
-func addBig(n int64) *big.Int{
-	i := &big.Int{}
-	_, success := i.SetString("1234567890123456789012345678901234567890", 10)
-	if !success {
-		log.Fatal("failed to SetString")
-	}
-
-	nInt := &big.Int{}
-	nInt.SetInt64(n)
-	i.Add(i, nInt)
-
-	return i
-}
-
-
-func ReadFile(file string) *big.Int {
-	b, err := ioutil.ReadFile(file)
-	if err != nil {
-		log.Fatalf("error reading file %s: %s", file, err)
-	}
-	i := &big.Int{}
-
-	return i.SetBytes(b)
 }
