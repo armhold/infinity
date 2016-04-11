@@ -27,6 +27,25 @@ func Decimal2binary(decimal string) (string, error) {
 	return fmt.Sprintf("%0b", d), nil
 }
 
+func BytesToIntString(b []byte) string {
+	i := &big.Int{}
+	i.SetBytes(b)
+
+	return i.String()
+}
+
+// takes an string representing a decimal integer, e.g. "65535" for 65,535
+func IntStringToBytes(s string) []byte {
+	i := &big.Int{}
+	_, ok := i.SetString(s, 10)
+	if ! ok {
+		log.Fatalf("error creating big.Int from string: %s", s)
+	}
+
+	return i.Bytes()
+}
+
+
 func addBig(n int64) *big.Int{
 	i := &big.Int{}
 	_, success := i.SetString("1234567890123456789012345678901234567890", 10)

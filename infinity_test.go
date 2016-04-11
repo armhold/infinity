@@ -47,28 +47,19 @@ func TestSetBytes(t *testing.T) {
 func TestRoundTrip(t *testing.T) {
 	// test bytes -> int
 	//
-	abc := "ABC"
-	b := []byte(abc)
+	expected := "4276803"
+	actual := BytesToIntString([]byte("ABC"))
 
-	i := big.Int{}
-	i.SetBytes(b)
-
-	expectedInt := int64(4276803)
-	actualInt := i.Int64()
-
-	if actualInt != expectedInt {
-		t.Fatalf("expected: %d, got: %d", expectedInt, actualInt)
+	if actual != expected {
+		t.Fatalf("expected: %s, got: %s", expected, actual)
 	}
 
 	// test int -> bytes
 	//
-	i = big.Int{}
-	i.SetInt64(4276803)
+	expected = "ABC"
+	actual = string(IntStringToBytes("4276803"))
 
-	expectedString := "ABC"
-	actualString := string(i.Bytes())
-
-	if actualString != expectedString {
-		t.Fatalf("expected: %s, got: %s", expectedString, actualString)
+	if actual != expected {
+		t.Fatalf("expected: %s, got: %s", expected, actual)
 	}
 }
