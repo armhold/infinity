@@ -83,9 +83,9 @@ If we concatenate the binary, we get:
     01000001 01000010 01000011  
      
 Or 4,276,803 in decimal. So the number for the string "ABC" is 4,276,803. Therefore "ABC" exists
-on the number line around 4.2 million.
+on the number line near the 4.2 millionth number.
 
-This project includes a program to print locate the number line "coordinate" for any file. Run it
+This project includes a program to print the number line "coordinate" for any file. Run it
 like this:
 
     $ go run cmd/find_number/find_number.go samples/creation_of_adam.jpg
@@ -95,5 +95,4 @@ like this:
 
 ### Notes
 
-The image "Creation of Adam" By Michelangelo is in the Public Domain, see: https://commons.wikimedia.org/w/index.php?curid=15461165
-
+The image "Creation of Adam" by Michelangelo is in the [Public Domain](https://commons.wikimedia.org/w/index.php?curid=15461165).
