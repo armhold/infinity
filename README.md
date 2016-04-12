@@ -11,8 +11,9 @@ pictures, etc) **already exists**- we just have to find it on the number line.
 
 This means that, for example, the Bible appears in the set of numbers- all possible versions of it. 
 Same for the Koran, and every other book that's ever been written (or will be written). 
-Tomorrow's newspaper is in there. **Your photographs and your favorite movie are all in there too**.
+Tomorrow's newspaper is in there. **Your photographs** and **your favorite movie** are all in there too.
 
+This program explores how we can discover the numbers associated with digital files.
 
 
 ### Encoding
@@ -32,7 +33,7 @@ two that can represent the decimal numbers 0-255.
 This quickly leads to some pretty big numbers.
 
 A kilobyte of data (1024 bytes- not at all
-a big file) is 8,192 bits. To get a ballpark idea of where that data lies in the number line
+a big file) is 8,192 bits. To get a ballpark idea of where that data lies on the number line
 we can assume it's all ones, and take the maximum value of 8,192 bits. That's 2^8192, or
 **1.0907481356×10^2466**.
 
