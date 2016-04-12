@@ -26,6 +26,8 @@ func DecimalToBinary(decimal string) (string, error) {
 	return fmt.Sprintf("%0b", d), nil
 }
 
+// BytesToIntString interprets a slice of bytes as a single giant integer, and returns that integer as a decimal string.
+// e.g. [65 66 67] => "4276803"
 func BytesToIntString(b []byte) string {
 	i := &big.Int{}
 	i.SetBytes(b)
@@ -33,7 +35,8 @@ func BytesToIntString(b []byte) string {
 	return i.String()
 }
 
-// takes an string representing a decimal integer, e.g. "65535" for 65,535
+// IntStringToBytes takes a decimal integer in string format and returns the byte representation of the integer.
+// e.g. "4276803" => [65 66 67]
 func IntStringToBytes(s string) []byte {
 	i := &big.Int{}
 	_, ok := i.SetString(s, 10)
