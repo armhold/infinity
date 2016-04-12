@@ -88,8 +88,13 @@ on the number line near the 4.2 millionth number.
 This project includes a program to print the number line "coordinate" for any file. Run it
 like this:
 
-    $ go run cmd/find_number/find_number.go samples/creation_of_adam.jpg
+    $ go install github.com/armhold/infinity/cmd/find_number
+    $ find_number samples/creation_of_adam.jpg
+    
+Or to just search for a string without using a file:
 
+    $ find_number -t "meaning of life"
+      568016600252838567935837243227858533
 
 
 
