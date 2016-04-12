@@ -7,6 +7,43 @@ import (
 	"testing"
 )
 
+func TestDecimalToBinary(t *testing.T) {
+	_, err := DecimalToBinary("bogus")
+	if err == nil {
+		t.Fatalf("expected error on bogus input")
+	}
+
+	actual, _ := DecimalToBinary("65")
+	expected := "1000001"
+	if actual != expected {
+		t.Fatalf("expected: %q, got: %q", expected, actual)
+	}
+
+	actual, _ = DecimalToBinary("255")
+	expected = "11111111"
+	if actual != expected {
+		t.Fatalf("expected: %q, got: %q", expected, actual)
+	}
+
+	actual, _ = DecimalToBinary("256")
+	expected = "100000000"
+	if actual != expected {
+		t.Fatalf("expected: %q, got: %q", expected, actual)
+	}
+
+	actual, _ = DecimalToBinary("65535")
+	expected = "1111111111111111"
+	if actual != expected {
+		t.Fatalf("expected: %q, got: %q", expected, actual)
+	}
+
+	actual, _ = DecimalToBinary("65536")
+	expected = "10000000000000000"
+	if actual != expected {
+		t.Fatalf("expected: %q, got: %q", expected, actual)
+	}
+}
+
 func TestSetBytes(t *testing.T) {
 	i := big.Int{}
 	i.SetBytes([]byte{255, 254})

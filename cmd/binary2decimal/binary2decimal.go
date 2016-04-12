@@ -14,7 +14,7 @@ func init() {
 }
 
 func main() {
-	decimal, err := infinity.Binary2decimal(os.Args[1])
+	decimal, err := infinity.BinaryToDecimal(os.Args[1])
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error parsing binary string %s: \n", err)
 		os.Exit(1)
