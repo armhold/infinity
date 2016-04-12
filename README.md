@@ -26,7 +26,8 @@ happens to reside at this number:
     361
 
 
-<sub>NB: I've elided most of the lines for brevity; you can download the actual file [here](https://github.com/armhold/infinity/blob/master/samples/creation_of_adam-number.txt).)</sub>
+<sub>NB: I've elided most of the lines for brevity; you can download all digits of 
+the full number [here](https://github.com/armhold/infinity/blob/master/samples/creation_of_adam-number.txt).)</sub>
 
 That is a number with 160,165 digits. It's a simple (though long) integer on the number line,
 and it happens to contain Michelangelo's Creation of Adam. It's always been there, even
@@ -51,21 +52,19 @@ Tomorrow's newspaper is in there. **Your photographs** and **your favorite movie
 This program explores how we can discover the numbers associated with digital files.
 
 
-### Representation
+### Really Big Numbers
 
 
-1. Any file contains a sequence of bytes- we string these bytes together to create a single number.
-1. Each byte has eight bits of storage.
-1. Every added bit doubles the potential "range" for a number.
-1. Since a byte has eight bits, each time you add a byte, the range for the number
-is doubled eight times.
+Any file contains a sequence of bytes- we string these bytes together to create a single number.
+Each byte has eight bits of storage. Every added bit doubles the potential "range" for a number.
+Since a byte has eight bits, each time you add a byte, the range for the number is doubled eight times.
 
 This quickly leads to some pretty big numbers.
 
 A kilobyte of data (1024 bytes- not at all
 a big file) is 8,192 bits. To get a ballpark idea of where that data might lie on the number line
 let's assume it's all ones, and take the maximum value of 8,192 bits. That's 2^8192, or
-**1.0907481356×10^2466**.
+**1.0907481356 × 10<sup>2466</sup>**.
 
 That's more than the number of atoms in the universe, but it's still a number.
 
