@@ -16,6 +16,13 @@ var (
 
 
 func init() {
+	var usage = func() {
+		fmt.Fprintf(os.Stderr, "Usage: %s [-w width] file\n", os.Args)
+		flag.PrintDefaults()
+	}
+
+	flag.Usage = usage
+
 	flag.IntVar(&width, "w", 0, "breaks the output into lines of the given width")
 	flag.Parse()
 
@@ -23,7 +30,7 @@ func init() {
 	args := flag.Args()
 
 	if len(args) != 1 {
-		fmt.Fprintf(os.Stderr, "Usage: %s [-w N] file\n", os.Args)
+		flag.Usage()
 		os.Exit(1)
 	}
 	file = args[0]
