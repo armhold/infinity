@@ -7,9 +7,9 @@ Literally everything digital appears in the set of natural numbers.
 
 ![creation of adam](https://github.com/armhold/infinity/blob/master/samples/creation_of_adam.jpg "creation of adam")
 
-Can we find a famous painting hidden among the integers in the set of Natural Numbers?
-It turns out we can- Michelangelo's [Creation of Adam](https://en.wikipedia.org/wiki/The_Creation_of_Adam)
-happens to reside at exactly this number:
+There's a famous painting hidden among the integers in the set of Natural Numbers.
+Michelangelo's [Creation of Adam](https://en.wikipedia.org/wiki/The_Creation_of_Adam)
+happens to reside at this number:
 
     25519637684623283551604138549800901322256540519555396335820617899064263322699621
     95191687493347723876911325592757091527584399836110327600568809057692273948571948
@@ -26,7 +26,7 @@ happens to reside at exactly this number:
     361
 
 
-NB: I've elided most of the lines for brevity; you can download the actual file [here](https://github.com/armhold/infinity/blob/master/samples/creation_of_adam-number.txt).)
+<sub>NB: I've elided most of the lines for brevity; you can download the actual file [here](https://github.com/armhold/infinity/blob/master/samples/creation_of_adam-number.txt).)</sub>
 
 That is a number with 160,165 digits. It's a simple (though long) integer on the number line,
 and it happens to contain Michelangelo's Creation of Adam. It's always been there, even
@@ -56,15 +56,15 @@ This program explores how we can discover the numbers associated with digital fi
 
 1. Any file contains a sequence of bytes- we string these bytes together to create a single number.
 1. Each byte has eight bits of storage.
-1. Every bit doubles the potential "range" for the number.
+1. Every added bit doubles the potential "range" for a number.
 1. Since a byte has eight bits, each time you add a byte, the range for the number
 is doubled eight times.
 
 This quickly leads to some pretty big numbers.
 
 A kilobyte of data (1024 bytes- not at all
-a big file) is 8,192 bits. To get a ballpark idea of where that data lies on the number line
-we can assume it's all ones, and take the maximum value of 8,192 bits. That's 2^8192, or
+a big file) is 8,192 bits. To get a ballpark idea of where that data might lie on the number line
+let's assume it's all ones, and take the maximum value of 8,192 bits. That's 2^8192, or
 **1.0907481356×10^2466**.
 
 That's more than the number of atoms in the universe, but it's still a number.
@@ -85,11 +85,11 @@ If we concatenate the binary, we get:
 Or 4,276,803 in decimal. So the number for the string "ABC" is 4,276,803. Therefore "ABC" exists
 on the number line near the 4.2 millionth number.
 
-This project includes a program to print the number line "coordinate" for any file. Run it
+This project includes a program to print the number line "coordinate" for any file. Install and run it
 like this:
 
     $ go install github.com/armhold/infinity/cmd/find_number
-    $ find_number samples/creation_of_adam.jpg
+    $ find_number some_file.jpg
     
 Or to just search for a string without using a file:
 
