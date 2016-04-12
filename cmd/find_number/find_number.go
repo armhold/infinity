@@ -12,13 +12,14 @@ import (
 var (
 	width int
 	indent int
+	text string
 	file string
 )
 
 
 func init() {
 	var usage = func() {
-		fmt.Fprintf(os.Stderr, "Usage: %s [-w width] file\n", os.Args)
+		fmt.Fprintf(os.Stderr, "Usage: %s [-w width] [-t text] [file]\n", os.Args[0])
 		flag.PrintDefaults()
 	}
 
@@ -26,36 +27,47 @@ func init() {
 
 	flag.IntVar(&width, "w", 0, "breaks the output into lines of the given width")
 	flag.IntVar(&indent, "i", 0, "indents the output")
+	flag.StringVar(&text, "t", "", "search given text")
 	flag.Parse()
 
 	// remaining args after flags are parsed
 	args := flag.Args()
 
-	if len(args) != 1 {
+	if text == "" && len(args) != 1 {
 		flag.Usage()
 		os.Exit(1)
 	}
-	file = args[0]
+
+	if len(args) > 0 {
+		file = args[0]
+	}
 }
 
 
-// find_number interprets the bytes of the given file as a single large integer, and prints that integer to stdout.
+// find_number interprets the bytes of the given string or file as a single large integer,
+// and prints that integer to stdout.
+//
 // NB: it reads the entire file into a byte array in memory, so it might not be appropriate for large files.
 func main() {
-	b, err := ioutil.ReadFile(file)
+	var bytes []byte
 
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "error reading file: %s %s:\n", file, err)
-		os.Exit(1)
+	if text != "" {
+		bytes = []byte(text)
+	} else {
+		b, err := ioutil.ReadFile(file)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error reading file: %s %s:\n", file, err)
+			os.Exit(1)
+		}
+		bytes = b
 	}
 
-	decimalString := infinity.BytesToIntString(b)
+	decimalString := infinity.BytesToIntString(bytes)
 
 	indentString := ""
 	for i := 0; i < indent; i++ {
 		indentString += " "
 	}
-
 
 	if width == 0 {
 		// use full width- don't split the string at all
