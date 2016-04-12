@@ -11,6 +11,7 @@ import (
 
 var (
 	width int
+	indent int
 	file string
 )
 
@@ -24,6 +25,7 @@ func init() {
 	flag.Usage = usage
 
 	flag.IntVar(&width, "w", 0, "breaks the output into lines of the given width")
+	flag.IntVar(&indent, "i", 0, "indents the output")
 	flag.Parse()
 
 	// remaining args after flags are parsed
@@ -49,17 +51,26 @@ func main() {
 
 	decimalString := infinity.BytesToIntString(b)
 
+	indentString := ""
+	for i := 0; i < indent; i++ {
+		indentString += " "
+	}
+
+
 	if width == 0 {
 		// use full width- don't split the string at all
-		fmt.Printf("%s\n", decimalString)
+		fmt.Printf("%s%s\n", indentString, decimalString)
 	} else {
 		for i, r := range decimalString {
-			fmt.Printf("%c", r)
-			if (i+1) % width == 0 {
+			if i % width == 0 {
+				fmt.Printf("%s%c", indentString, r)
+			} else if (i+1) % width == 0 {
+				fmt.Printf("%c", r)
 				fmt.Println()
+			} else {
+				fmt.Printf("%c", r)
 			}
 		}
-
 		fmt.Println()
 	}
 }
