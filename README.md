@@ -1,5 +1,40 @@
-# Infinity- literally everything digital appears in the set of natural numbers
+# Infinity
 
+Literally everything digital appears in the set of natural numbers.
+
+
+### Let's find a famous painting in the set of Natural Numbers
+
+![creation of adam](https://github.com/armhold/infinity/blob/master/samples/creation_of_adam.jpg "creation of adam")
+
+Can we find a famous painting hidden among the integers in the set of Natural Numbers?
+It turns out we can- Michelangelo's [Creation of Adam](https://en.wikipedia.org/wiki/The_Creation_of_Adam)
+happens to reside at exactly this number:
+
+    25519637684623283551604138549800901322256540519555396335820617899064263322699621
+    95191687493347723876911325592757091527584399836110327600568809057692273948571948
+    08265352774295543927463930227303989499812656204789274349264352246002620646195049
+    80743234655174227362545608569251825909819314291568940243800729262655548989815338
+    54946158978193172722003989771610404779019733491375454052733009346842568422009696
+    74942993143476565213005563390876806416489284574517449719256327217688989948909567
+    [ ... ]
+    66075392419937785208072076024225421796258819260095866487851661074765988817906435
+    95488615051785336967485705800344694295344605450895377295574423161887490912578460
+    55236362647031265463447554894035823105547224316844121735586980345834721507867209
+    39588739309981549612372297190758970535136257561299604029885537909193046058541165
+    07892131487938814207003552600673252186494827588209195808322307452037885128631910
+    361
+
+
+NB: I've elided most of the lines for brevity; you can download the actual file [here](https://github.com/armhold/infinity/blob/master/samples/creation_of_adam-number.txt).)
+
+That is a number with 160,165 digits. It's a simple (though long) integer on the number line,
+and it happens to contain Michelangelo's Creation of Adam. It's always been there, even
+before Michelangelo created his famous fresco in 1511.
+
+
+
+### Background
 
 Anything that can be described as a sequence of bytes can also be described by a single, 
 very large integer. Just take the bytes and stack them end to end. You can interpret these 
@@ -16,19 +51,14 @@ Tomorrow's newspaper is in there. **Your photographs** and **your favorite movie
 This program explores how we can discover the numbers associated with digital files.
 
 
-### Encoding
+### Representation
 
-We can describe a simple binary encoding for any file of bytes:
 
-1. Each binary digit (a 0 or 1) represents an increasing power of 2. So the first bit
-is the number of ones. The second bit, the numbers of twos. The third bit, the number of fours, etc. 
-1. The last byte in the file holds the lowest-order bits, and the first byte the highest.
-1. the rightmost byte (last one in the file) holds bits 0-7, which represent those powers of 
-two that can represent the decimal numbers 0-255.
-1. the next-to-last byte holds bits 8-15, which represent 256-65,535.
-1. and so on.
-1. Since each additional bit **doubles** the size, this quickly leads to some pretty big numbers.
-
+1. Any file contains a sequence of bytes- we string these bytes together to create a single number.
+1. Each byte has eight bits of storage.
+1. Every bit doubles the potential "range" for the number.
+1. Since a byte has eight bits, each time you add a byte, the range for the number
+is doubled eight times.
 
 This quickly leads to some pretty big numbers.
 
@@ -55,31 +85,9 @@ If we concatenate the binary, we get:
 Or 4,276,803 in decimal. So the number for the string "ABC" is 4,276,803. "ABC" exists 
 on the number line around 4.2 million. 
 
-### Finding a Famous Painting on the Number Line.
-
-![creation of adam](https://github.com/armhold/infinity/blob/master/samples/creation_of_adam.jpg "creation of adam")
-
-(the image "Creation of Adam" By Michelangelo is Public Domain, see: https://commons.wikimedia.org/w/index.php?curid=15461165)
-
-Finding a string of 3 characters is one thing, but can we find something more interesting? Maybe a painting by
-Michelangelo? It turns out that we can. The Creation of Adam can be found in the set of natural numbers, at this
-specific location:
-
-    25519637684623283551604138549800901322256540519555396335820617899064263322699621
-    95191687493347723876911325592757091527584399836110327600568809057692273948571948
-    08265352774295543927463930227303989499812656204789274349264352246002620646195049
-    80743234655174227362545608569251825909819314291568940243800729262655548989815338
-    54946158978193172722003989771610404779019733491375454052733009346842568422009696
-    74942993143476565213005563390876806416489284574517449719256327217688989948909567
-    [ ...many lines removed for brevity...]
-    66075392419937785208072076024225421796258819260095866487851661074765988817906435
-    95488615051785336967485705800344694295344605450895377295574423161887490912578460
-    55236362647031265463447554894035823105547224316844121735586980345834721507867209
-    39588739309981549612372297190758970535136257561299604029885537909193046058541165
-    07892131487938814207003552600673252186494827588209195808322307452037885128631910
-    361
 
 
-Yes, that is a number with 160,165 digits It's on the number line, and it contains Michelangelo's Creation of Adam.
+### Notes
 
-NB: I've elided most of the lines for brevity; you can download the actual file [here](https://github.com/armhold/infinity/blob/master/samples/creation_of_adam-number.txt).)
+The image "Creation of Adam" By Michelangelo is in the Public Domain, see: https://commons.wikimedia.org/w/index.php?curid=15461165
+
