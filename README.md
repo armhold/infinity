@@ -38,7 +38,7 @@ before Michelangelo created his famous fresco in 1511.
 
 Anything that can be described as a sequence of bytes can also be described by a single, 
 very large integer. Just take the bytes and stack them end to end. You can interpret these 
-bytes as a single number. That number appears in the set of 
+bytes as a single integer. By definition, that integer appears in the set of
 [Natural Numbers](https://en.wikipedia.org/wiki/Natural_number).
 
 So in a sense, everything that can be expressed digitally (software programs, books, music,
@@ -82,8 +82,14 @@ If we concatenate the binary, we get:
 
     01000001 01000010 01000011  
      
-Or 4,276,803 in decimal. So the number for the string "ABC" is 4,276,803. "ABC" exists 
-on the number line around 4.2 million. 
+Or 4,276,803 in decimal. So the number for the string "ABC" is 4,276,803. Therefore "ABC" exists
+on the number line around 4.2 million.
+
+This project includes a program to print locate the number line "coordinate" for any file. Run it
+like this:
+
+    $ go run cmd/find_number/find_number.go samples/creation_of_adam.jpg
+
 
 
 
