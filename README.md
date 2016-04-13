@@ -63,7 +63,7 @@ This quickly leads to some pretty big numbers.
 
 A kilobyte of data (1024 bytes- not at all
 a big file) is 8,192 bits. To get a ballpark idea of where that data might lie on the number line
-let's assume it's all ones, and take the maximum value of 8,192 bits. That's 2^8192, or
+let's assume it's all ones, and take the maximum value of 8,192 bits. That's 2<sup>8192</sup>, or
 **1.0907481356 × 10<sup>2466</sup>**.
 
 That's more than the number of atoms in the universe, but it's still a number.
@@ -87,7 +87,7 @@ on the number line near the 4.2 millionth number.
 This project includes a program to print the number line "coordinate" for any file. Install it
 like this:
 
-    $ go install github.com/armhold/infinity/cmd/find_number
+    $ go install github.com/armhold/infinity/...
     
 Now you can use it to get the number coordinate for any given file like this:    
     
