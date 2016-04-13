@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/armhold/infinity"
+	"io/ioutil"
 )
 
 var (
@@ -42,7 +43,17 @@ func init() {
 // decode_number decodes the given number into its bytes, converts those bytes into a string, and
 // prints the string to stdout.
 func main() {
-	b := infinity.IntStringToBytes(number)
-	s := string(b)
+	if file != "" {
+		s, err := ioutil.ReadFile(file)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "error reading file: %s: %s ", file, err)
+			os.Exit(1)
+		}
+		number = string(s)
+	}
+
+	bytes := infinity.IntStringToBytes(number)
+	s := string(bytes)
+
 	fmt.Fprintf(os.Stdout, "%s\n", s)
 }
