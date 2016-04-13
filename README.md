@@ -56,8 +56,8 @@ This program explores how we can discover the numbers associated with digital fi
 
 
 Any file contains a sequence of bytes- we string these bytes together to create a single number.
-Each byte has eight bits of storage. Every added bit doubles the potential "range" for a number.
-Since a byte has eight bits, each time you add a byte, the range for the number is doubled eight times.
+Each byte has eight bits of storage. Every added bit doubles the potential "range" of numbers.
+Since a byte has eight bits, each time you add a byte, the range is doubled eight times.
 
 This quickly leads to some pretty big numbers.
 
@@ -70,8 +70,8 @@ That's more than the number of atoms in the universe, but it's still a number.
 
 ### Demonstration
 
-Consider the string "ABC". This can be written as three bytes. In decimal, the bytes are (via ASCII/Unicode encoding)
-65, 66, and 67. In binary, this gives us:
+Consider the string "ABC". This can be written as three bytes. In decimal, the bytes are (assuming
+ASCII/Unicode encoding) 65, 66, and 67. In binary, this gives us:
 
     A = 65 = 01000001
     B = 66 = 01000010
@@ -96,13 +96,13 @@ Now you can use it to get the number coordinate for any given file like this:
     
 Or if you just want to look for a particular word or phrase, you can do:
 
-    $ find_number -t "meaning of the universe"
-    10478056854482697251120441127746823048366675659433603941
+    $ find_number -t "meaning of life"
+    568016600252838567935837243227858533
 
 And if you already have a number, and you'd like to see what it holds:
 
-    $ decode_number -n 10478056854482697251120441127746823048366675659433603941
-    meaning of the universe
+    $ decode_number -n 568016600252838567935837243227858533
+    meaning of life
 
 
 
