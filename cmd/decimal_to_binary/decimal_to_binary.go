@@ -14,6 +14,8 @@ func init() {
 	}
 }
 
+// Simple program to aid debugging decimal -> binary conversions.
+// Note that on most Unix systems you can simply use: $ echo 'obase=2;256' | bc
 func main() {
 	decimal, err := infinity.DecimalToBinary(os.Args[1])
 	if err != nil {

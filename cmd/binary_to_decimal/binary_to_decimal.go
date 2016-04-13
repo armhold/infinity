@@ -14,6 +14,8 @@ func init() {
 	}
 }
 
+// Simple program to aid debugging binary -> decimal conversions.
+// Note on most Unix systems you can simply use: $ echo 'ibase=2;100000000' | bc
 func main() {
 	decimal, err := infinity.BinaryToDecimal(os.Args[1])
 	if err != nil {
