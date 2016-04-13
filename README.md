@@ -84,16 +84,25 @@ If we concatenate the binary, we get:
 Or 4,276,803 in decimal. So the number for the string "ABC" is 4,276,803. Therefore "ABC" exists
 on the number line near the 4.2 millionth number.
 
-This project includes a program to print the number line "coordinate" for any file. Install and run it
+This project includes a program to print the number line "coordinate" for any file. Install it
 like this:
 
     $ go install github.com/armhold/infinity/cmd/find_number
-    $ find_number some_file.jpg
     
-Or to just search for a string without using a file:
+Now you can use it to get the number coordinate for any given file like this:    
+    
+    $ find_number some_file.jpg
+    [ ... pages of numbers omitted...]
+    
+Or if you just want to look for a particular word or phrase, you can do:
 
-    $ find_number -t "meaning of life"
-      568016600252838567935837243227858533
+    $ find_number -t "meaning of the universe"
+    10478056854482697251120441127746823048366675659433603941
+
+And if you already have a number, and you'd like to see what it holds:
+
+    $ decode_number -n 10478056854482697251120441127746823048366675659433603941
+    meaning of the universe
 
 
 
