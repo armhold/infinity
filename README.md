@@ -104,6 +104,18 @@ And if you already have a number, and you'd like to see what it holds:
     meaning of life
 
 
+### Wait, aren't you just *encoding* this data?
+
+In a sense, yes. You can check the code (it's very short) and see how it works- we take a sequence of letters,
+turn them into bytes, and then print the bytes as a long number. It doesn't change the fact that at the end,
+you get a single number back; a number that maps to your data, which has always been there in the number. This
+program merely identifies where it lives.
+
+A somewhat spooky corollary to this is the fact that you cannot ever edit or delete your data. Like some kind of
+cosmic blockchain, the data exists in the number line- it's always been there, and there is no way for you
+to remove it. Take comfort in the fact that all possible variations and permutations of the numbers exist, and
+from our perspective, it's mostly just noise.
+
 
 ### Notes
 
