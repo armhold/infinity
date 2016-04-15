@@ -29,7 +29,7 @@ func IntStringToBytes(s string) []byte {
 	return i.Bytes()
 }
 
-// BinaryToDecimal takes a string of 1s and 0s and returns it as an integer.
+// BinaryToDecimal takes a string of 0s and 1s and returns it as an integer.
 func BinaryToDecimal(binary string) (int64, error) {
 	decimal, err := strconv.ParseInt(os.Args[1], 2, 63)
 	if err != nil {

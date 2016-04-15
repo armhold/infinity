@@ -106,7 +106,7 @@ And if you already have a number, and you'd like to see what it holds:
 
 ### Wait, aren't you just *encoding* this data?
 
-In a sense, yes. You can check the code (it's very short) and see how it works- we take a sequence of letters,
+In a sense, yes. You can check the source code (it's very short) and see how it works- we take a sequence of letters,
 turn them into bytes, and then print the bytes as a long number. It doesn't change the fact that at the end,
 you get a single number back; a number that maps to your data, which has always been there in the number. This
 program merely identifies where it lives.

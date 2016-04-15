@@ -11,9 +11,8 @@ import (
 
 var (
 	number string
-	file string
+	file   string
 )
-
 
 func init() {
 	var usage = func() {
@@ -38,7 +37,6 @@ func init() {
 		file = args[0]
 	}
 }
-
 
 // decode_number decodes the given number into its bytes, converts those bytes into a string, and
 // prints the string to stdout.

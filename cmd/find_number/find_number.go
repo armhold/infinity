@@ -10,12 +10,11 @@ import (
 )
 
 var (
-	width int
+	width  int
 	indent int
-	text string
-	file string
+	text   string
+	file   string
 )
-
 
 func init() {
 	var usage = func() {
@@ -42,7 +41,6 @@ func init() {
 		file = args[0]
 	}
 }
-
 
 // find_number interprets the bytes of the given string or file as a single large integer,
 // and prints that integer to stdout.
@@ -74,9 +72,9 @@ func main() {
 		fmt.Printf("%s%s\n", indentString, decimalString)
 	} else {
 		for i, r := range decimalString {
-			if i % width == 0 {
+			if i%width == 0 {
 				fmt.Printf("%s%c", indentString, r)
-			} else if (i+1) % width == 0 {
+			} else if (i+1)%width == 0 {
 				fmt.Printf("%c", r)
 				fmt.Println()
 			} else {
