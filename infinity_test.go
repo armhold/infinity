@@ -97,7 +97,6 @@ func TestCreation(t *testing.T) {
 	}
 }
 
-
 func TestRemoveWhitespace(t *testing.T) {
 	s := "\naaa bbb ccc\nddd "
 	expected := "aaabbbcccddd"

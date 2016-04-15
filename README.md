@@ -70,7 +70,7 @@ That's more than the number of atoms in the universe. A big number for sure, but
 ### Demonstration
 
 Consider the string "ABC". This can be written as three bytes. In decimal, the bytes are (assuming
-ASCII/Unicode encoding) 65, 66, and 67. In binary, this gives us:
+ASCII/Unicode) 65, 66, and 67. In binary, this gives us:
 
     A = 65 = 01000001
     B = 66 = 01000010
@@ -109,11 +109,11 @@ And if you already have a number, and you'd like to see what it holds:
 In a sense, yes. You can check the source code (it's very short) and see how it works- we take a sequence of letters,
 turn them into bytes, and then print the bytes as a long number. It doesn't change the fact that at the end,
 you get a single number back; a number that maps to your data, which has always been there in the number. This
-program merely identifies where it lives.
+program merely identifies where it resides.
 
-A somewhat spooky corollary to this is the fact that you cannot ever edit or delete your data. Like some kind of
+A somewhat spooky corollary to this, is the fact that you cannot ever edit or delete your data. Like some kind of
 cosmic blockchain, the data exists in the number line- it's always been there, and there is no way for you
-to remove it. Take comfort in the fact that all possible variations and permutations of the numbers exist, and
+to remove it. Take comfort in the fact that infinite variations and permutations of the numbers exist, and
 from our perspective, it's mostly just noise.
 
 
