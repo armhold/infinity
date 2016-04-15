@@ -96,3 +96,14 @@ func TestCreation(t *testing.T) {
 		t.Fatalf("round trip failed")
 	}
 }
+
+
+func TestRemoveWhitespace(t *testing.T) {
+	s := "\naaa bbb ccc\nddd "
+	expected := "aaabbbcccddd"
+	actual := RemoveWhitespace(s)
+
+	if actual != expected {
+		t.Fatalf("expected %s, actual: %s", expected, actual)
+	}
+}

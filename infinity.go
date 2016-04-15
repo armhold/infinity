@@ -6,6 +6,7 @@ import (
 	"math/big"
 	"os"
 	"strconv"
+	"strings"
 )
 
 // BytesToIntString interprets a slice of bytes as a single integer, and returns that integer as a decimal string.
@@ -47,4 +48,12 @@ func DecimalToBinary(decimal string) (string, error) {
 	}
 
 	return fmt.Sprintf("%0b", d), nil
+}
+
+// Removes indentation and newlines.
+func RemoveWhitespace(s string) string {
+	result := strings.Replace(s, " ", "", -1)
+	result = strings.Replace(result, "\n", "", -1)
+
+	return result
 }

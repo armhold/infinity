@@ -58,7 +58,11 @@ func main() {
 			fmt.Fprintf(os.Stderr, "error reading file: %s: %s ", inFile, err)
 			os.Exit(1)
 		}
+
 		number = string(s)
+
+		// remove indentation and newlines that might have been added by find_number
+		number = infinity.RemoveWhitespace(number)
 	}
 
 	bytes := infinity.IntStringToBytes(number)
