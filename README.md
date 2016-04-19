@@ -55,9 +55,9 @@ This program explores how we can discover the numbers associated with digital fi
 ### Really Big Numbers
 
 
-Any file contains a sequence of bytes- we string these bytes together to create a single number.
-Each byte has eight bits of storage. Every added bit doubles the potential "range" of numbers.
-Since a byte has eight bits, each time you add a byte, the range is doubled eight times.
+Any file contains a sequence of bytes- we string these bytes together to create a single number
+out of the many smaller ones. Each byte has eight bits of storage. Every added bit doubles the potential
+"range" of numbers. Since a byte has eight bits, each time you add a byte, the range is doubled eight times.
 
 This quickly leads to some pretty big numbers.
 
@@ -111,10 +111,10 @@ turn them into bytes, and then print the bytes as a long number. It doesn't chan
 you get a single number back; a number that maps to your data, which has always been there in the number. This
 program merely identifies where it resides.
 
-A somewhat spooky corollary to this, is the fact that you cannot ever edit or delete your data. Like some kind of
-cosmic blockchain, the data exists in the number line- it's always been there, and there is no way for you
-to remove it. Take comfort in the fact that infinite variations and permutations of the numbers exist, and
-from our perspective, it's mostly just noise.
+A somewhat spooky corollary to this is the fact that your all your data is out there on the number line, and you
+cannot ever edit or delete it. Like some kind of cosmic blockchain, the data exists in the number line- it's always
+been there, and there is no way for you to remove it. Take comfort in the fact that infinite variations and
+permutations of the numbers exist, and from our perspective, it's mostly just noise.
 
 
 ### Notes
