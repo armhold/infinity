@@ -111,7 +111,7 @@ turn them into bytes, and then print the bytes as a long number. It doesn't chan
 you get a single number back; a number that maps to your data, which has always been there in the number. This
 program merely identifies where it resides.
 
-A somewhat spooky corollary to this is the fact that your **all your data is out there on the number line**, and you
+A somewhat spooky corollary to this is the fact that **all your data is out there on the number line**, and you
 cannot ever edit or delete it. Like some kind of cosmic blockchain, the data exists in the number line- it's always
 been there, and there is no way for you to remove it. Take comfort in the fact that infinite variations and
 permutations of the numbers exist, and from our perspective, it's mostly just noise.
